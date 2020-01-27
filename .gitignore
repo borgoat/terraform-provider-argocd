@@ -65,3 +65,5 @@ override.tf.json
 .history
 
 # End of https://www.gitignore.io/api/go,terraform,visualstudiocode
+
+terraform-provider-argocd

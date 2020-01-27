@@ -10,6 +10,45 @@ func resourceApplication() *schema.Resource {
 		Read:   resourceApplicationRead,
 		Update: resourceApplicationUpdate,
 		Delete: resourceApplicationDelete,
+
+		Schema: map[string]*schema.Schema{
+			"name": &schema.Schema{
+				Type:     schema.TypeString,
+				Required: true,
+			},
+			"namespace": &schema.Schema{
+				Type:     schema.TypeString,
+				Required: true,
+			},
+			"finalizers": &schema.Schema{
+				Type:     schema.TypeList,
+				Optional: true,
+				Elem: &schema.Schema{
+					Type: schema.TypeString,
+				},
+			},
+			"project": &schema.Schema{
+				Type:     schema.TypeString,
+				Required: true,
+			},
+			"source": &schema.Schema{
+				Type:     schema.TypeSet,
+				MaxItems: 1,
+				Required: true,
+				Elem: &schema.Resource{
+					Schema: map[string]*schema.Schema{
+						"repo_url": &schema.Schema{
+							Type:     schema.TypeString,
+							Required: true,
+						},
+						"path": &schema.Schema{
+							Type:     schema.TypeString,
+							Required: true,
+						},
+					},
+				},
+			},
+		},
 	}
 }
 
