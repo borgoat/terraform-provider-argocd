@@ -29,7 +29,8 @@ func resourceApplication() *schema.Resource {
 			},
 			"project": &schema.Schema{
 				Type:     schema.TypeString,
-				Required: true,
+				Optional: true,
+				Default:  "default",
 			},
 			"source": &schema.Schema{
 				Type:     schema.TypeSet,
