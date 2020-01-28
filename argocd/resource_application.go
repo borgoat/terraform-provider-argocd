@@ -34,8 +34,8 @@ func resourceApplication() *schema.Resource {
 			},
 			"source": &schema.Schema{
 				Type:     schema.TypeSet,
-				MaxItems: 1,
 				Required: true,
+				MaxItems: 1,
 				Elem: &schema.Resource{
 					Schema: map[string]*schema.Schema{
 						"repo_url": &schema.Schema{

@@ -9,5 +9,11 @@ func Provider() *schema.Provider {
 		ResourcesMap: map[string]*schema.Resource{
 			"argocd_application": resourceApplication(),
 		},
+
+		ConfigureFunc: configureFunc,
 	}
+}
+
+func configureFunc(d *schema.ResourceData) (interface{}, error) {
+	return nil, nil
 }
