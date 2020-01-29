@@ -54,6 +54,7 @@ func resourceApplication() *schema.Resource {
 }
 
 func resourceApplicationCreate(d *schema.ResourceData, m interface{}) error {
+	m.(Meta).Argo.NewAccountClient()
 	return resourceApplicationRead(d, m)
 }
 
